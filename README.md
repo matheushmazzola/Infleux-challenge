@@ -29,12 +29,12 @@ You can edit using one field or all at once.
 
     + Body
 
-		{
+            {
 				"advertiser": "Rovio",
 				"country": "Finland",
 				"conversion": "CPC",
 				"bid": "3.85"
-		}
+			}
 
 
 ### Find campaigns [GET /campaigns/find]
