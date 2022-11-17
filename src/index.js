@@ -20,5 +20,5 @@ app.listen(port, (error)=>{
         return console.log('Error', error)
       }
 
-    console.log("servidor iniciado");
+    console.log("server started");
 })
