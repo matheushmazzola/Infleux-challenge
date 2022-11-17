@@ -2,7 +2,7 @@ Nodejs-API
 
 POST
 Create campaigns
-http://localhost:3000/campaigns/create
+https://nodejs-apii.herokuapp.com/campaigns/create
 
 
 json
@@ -16,7 +16,7 @@ json
 
 PUT
 Edit campaigns
-http://localhost:3000/campaigns/edit
+https://nodejs-apii.herokuapp.com/campaigns/edit
 StartFragment
 
 Description
@@ -35,7 +35,7 @@ json
 
 GET
 Find campaigns
-http://localhost:3000/campaigns/find
+https://nodejs-apii.herokuapp.com/campaigns/find
 StartFragment
 
 Description
@@ -53,7 +53,7 @@ json
 
 GET
 Fetch campaigns
-http://localhost:3000/fetch?country=finland
+https://nodejs-apii.herokuapp.com/fetch?country=finland
 StartFragment
 
 Description
@@ -64,7 +64,7 @@ country=finland
 
 DEL
 Delete campaigns
-http://localhost:3000/campaigns/delete
+https://nodejs-apii.herokuapp.com/campaigns/delete
 
 
 json
