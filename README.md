@@ -17,9 +17,9 @@ https://nodejs-apii.herokuapp.com/campaigns/create
 			}
 
 
-### Edit campaigns [PUT /campaigns/edit]
+### Edit campaigns [POST /campaigns/edit]
 
-https://nodejs-apii.herokuapp.com/campaigns/edit?campaign_name=Angry%20Birds
+https://nodejs-apii.herokuapp.com/campaigns/edit
 
 Description
 
@@ -31,7 +31,8 @@ You can edit using one field or all at once.
 
     + Body
 
-            {
+            {			
+	    			"campaign_name": "Angry Birds",
 				"advertiser": "Rovio",
 				"country": "Finland",
 				"conversion": "CPC",
@@ -68,7 +69,7 @@ Filters the best campaign by the highest bid using country as the main parameter
 		?country=finland
 
 
-### Delete campaigns [DELETE /campaigns/delete]
+### Delete campaigns [POST /campaigns/delete]
 
 https://nodejs-apii.herokuapp.com/campaigns/delete
 
