@@ -44,6 +44,7 @@ You can edit using one field or all at once.
 https://nodejs-apii.herokuapp.com/campaigns/find?campaign_name=Angry%20Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85
 
 Description
+
 You can search using one field or all for a more detailed search.
 
 + Request (application/json)
@@ -57,6 +58,7 @@ You can search using one field or all for a more detailed search.
 https://nodejs-apii.herokuapp.com/fetch?country=finland
 
 Description
+
 Filters the best campaign by the highest bid using country as the main parameter.
 
 
