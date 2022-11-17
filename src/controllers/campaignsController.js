@@ -15,11 +15,12 @@ router.post('/create', async(request, response)=>{
 });
 
 router.get('/find', async(request, response)=>{
+    var data = request.query;
 
     try{
 
-        const campaigns = await Campaigns.findOne(request.body);
-        return response.send({ campaigns });
+        const campaign = await Campaigns.find({ $regex: data, $options: 'i' });
+        return response.send({ campaign });
 
     }catch(error){
         return response.status(400).send({ error: 'Find failed' }) ;

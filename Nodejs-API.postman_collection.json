@@ -67,23 +67,11 @@
 		},
 		{
 			"name": "Find campaigns",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"campaign_name\": \"Angry Birds\",\r\n    \"advertiser\": \"Rovio\",\r\n    \"country\": \"Finland\",\r\n    \"conversion\": \"CPC\",\r\n    \"bid\":\"3.85\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:3000/campaigns/find",
+					"raw": "http://localhost:3000/campaigns/find?campaign_name=Angry Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -92,6 +80,28 @@
 					"path": [
 						"campaigns",
 						"find"
+					],
+					"query": [
+						{
+							"key": "campaign_name",
+							"value": "Angry Birds"
+						},
+						{
+							"key": "advertiser",
+							"value": "Rovio"
+						},
+						{
+							"key": "country",
+							"value": "Finland"
+						},
+						{
+							"key": "conversion",
+							"value": "CPC"
+						},
+						{
+							"key": "bid",
+							"value": "3.85"
+						}
 					]
 				},
 				"description": "StartFragment\n\n```\nYou can search using one field or all for a more detailed search.\n```\n\nEndFragment"
