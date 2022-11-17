@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const port = 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -14,7 +13,7 @@ app.get('/', (request, response)=>{
     response.send("oi");
 })
 
-app.listen(port, (error)=>{
+app.listen(process.env.PORT || 3000, (error)=>{
     
     if (error) {
         return console.log('Error', error)

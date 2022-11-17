@@ -1,0 +1,3 @@
+APP_URL=http://localhost:3000
+
+MONGO_URL=mongodb+srv://krypt:<passwd>@cluster0.9tpbx9m.mongodb.net/node
