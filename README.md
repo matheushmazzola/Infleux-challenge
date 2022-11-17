@@ -40,7 +40,7 @@ You can edit using one field or all at once.
 
 ### Find campaigns [GET /campaigns/find]
 
-https://nodejs-apii.herokuapp.com/campaigns/find?campaign_name=AngryU+0020Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85
+https://nodejs-apii.herokuapp.com/campaigns/find?campaign_name=Angry%20Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85
 
 Description
 You can search using one field or all for a more detailed search.
