@@ -19,23 +19,22 @@ https://nodejs-apii.herokuapp.com/campaigns/create
 
 ### Edit campaigns [PUT /campaigns/edit]
 
-https://nodejs-apii.herokuapp.com/campaigns/edit
+https://nodejs-apii.herokuapp.com/campaigns/edit?campaign_name=Angry%20Birds
 
 Description
-Editing is done based on the field "campaign_name"
+Editing is done based on the param "campaign_name"
 You can edit using one field or all at once.
 
 + Request (application/json)
 
     + Body
 
-            {
-				"campaign_name": "Angry Birds",
+		{
 				"advertiser": "Rovio",
 				"country": "Finland",
 				"conversion": "CPC",
 				"bid": "3.85"
-			}
+		}
 
 
 ### Find campaigns [GET /campaigns/find]
