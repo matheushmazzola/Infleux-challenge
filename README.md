@@ -2,7 +2,7 @@ Nodejs-API
 
 POST
 Create campaigns
-http://localhost:3000/campaigns/create
+https://nodejs-apii.herokuapp.com/campaigns/create
 
 
 json
@@ -16,8 +16,7 @@ json
 
 PUT
 Edit campaigns
-http://localhost:3000/campaigns/edit
-StartFragment
+https://nodejs-apii.herokuapp.com/campaigns/edit
 
 Description
 Editing is done based on the field "campaign_name"
@@ -35,8 +34,7 @@ json
 
 GET
 Find campaigns
-http://localhost:3000/campaigns/find
-StartFragment
+https://nodejs-apii.herokuapp.com/campaigns/find
 
 Description
 You can search using one field or all for a more detailed search.
@@ -53,8 +51,7 @@ json
 
 GET
 Fetch campaigns
-http://localhost:3000/fetch?country=finland
-StartFragment
+https://nodejs-apii.herokuapp.com/fetch?country=finland
 
 Description
 Filters the best campaign by the highest bid using country as the main parameter.
@@ -64,7 +61,7 @@ country=finland
 
 DEL
 Delete campaigns
-http://localhost:3000/campaigns/delete
+https://nodejs-apii.herokuapp.com/campaigns/delete
 
 
 json
