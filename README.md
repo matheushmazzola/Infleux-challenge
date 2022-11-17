@@ -17,7 +17,6 @@ json
 PUT
 Edit campaigns
 https://nodejs-apii.herokuapp.com/campaigns/edit
-StartFragment
 
 Description
 Editing is done based on the field "campaign_name"
@@ -36,7 +35,6 @@ json
 GET
 Find campaigns
 https://nodejs-apii.herokuapp.com/campaigns/find
-StartFragment
 
 Description
 You can search using one field or all for a more detailed search.
@@ -54,7 +52,6 @@ json
 GET
 Fetch campaigns
 https://nodejs-apii.herokuapp.com/fetch?country=finland
-StartFragment
 
 Description
 Filters the best campaign by the highest bid using country as the main parameter.
