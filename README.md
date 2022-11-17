@@ -34,20 +34,13 @@ json
 
 GET
 Find campaigns
-https://nodejs-apii.herokuapp.com/campaigns/find
+https://nodejs-apii.herokuapp.com/campaigns/find?campaign_name=Angry Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85
 
 Description
 You can search using one field or all for a more detailed search.
 
-
-json
-{
-  "campaign_name": "Angry Birds",
-  "advertiser": "Rovio",
-  "country": "Finland",
-  "conversion": "CPC",
-  "bid": "3.85"
-}
+Query Params
+campaign_name=Angry Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85
 
 GET
 Fetch campaigns
