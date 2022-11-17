@@ -31,8 +31,8 @@ You can edit using one field or all at once.
 
     + Body
 
-            {			
-	    			"campaign_name": "Angry Birds",
+            {
+				"campaign_name": "Angry Birds",
 				"advertiser": "Rovio",
 				"country": "Finland",
 				"conversion": "CPC",
