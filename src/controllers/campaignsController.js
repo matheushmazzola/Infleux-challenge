@@ -18,13 +18,16 @@ router.get('/find', async(request, response)=>{
     const { campaign_name, advertiser, country, conversion, bid } = request.query;
 
     try{
-
-        const campaign = await Campaigns.find({$or:[
-            {campaign_name: campaign_name ? campaign_name : ""},
-            {advertiser: advertiser ? advertiser : ""},
-            {country: country ? country : ""},
-            {conversion: conversion ? conversion : ""},
-            {bid: bid ? bid : "" }]});
+        if(!campaign_name && !advertiser && !country && !conversion && !bid){
+            var campaign = await Campaigns.find();
+        }else{
+            var campaign = await Campaigns.find({$or:[
+                {campaign_name: campaign_name ? campaign_name : ""},
+                {advertiser: advertiser ? advertiser : ""},
+                {country: country ? country : ""},
+                {conversion: conversion ? conversion : ""},
+                {bid: bid ? bid : "" }]});
+        }
 
         return response.send({ campaign });
 
