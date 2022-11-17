@@ -36,9 +36,8 @@ router.get('/find', async(request, response)=>{
     }
 });
 
-router.put('/edit', async(request, response)=>{
-    const { advertiser, country, conversion, bid } = request.body;
-    const { campaign_name } = request.query;
+router.post('/edit', async(request, response)=>{
+    const { campaign_name, advertiser, country, conversion, bid } = request.body;
 
     try{
         const campaigns = await Campaigns.updateOne({ campaign_name },{ $set: { advertiser, country, conversion, bid }});
@@ -49,7 +48,7 @@ router.put('/edit', async(request, response)=>{
     }
 });
 
-router.delete('/delete', async(request, response)=>{
+router.post('/delete', async(request, response)=>{
     const { campaign_name } = request.body;
     var deleted = { campaign_name: campaign_name };
 

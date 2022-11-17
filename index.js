@@ -9,9 +9,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 require('./src/controllers/campaignsController')(app);
 require('./src/controllers/fetchController')(app);
 
-
-
 app.use(express.static(path));
+
 
 app.get('/', (request, response)=>{
     response.sendFile(path + "index.html");
