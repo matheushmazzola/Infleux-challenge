@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "0929f1b6-d557-4141-ac74-a1cb4a68d774",
+		"name": "Nodejs-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10139964"
+	},
+	"item": [
+		{
+			"name": "Create campaigns",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"campaign_name\": \"Angry Birds\",\r\n    \"advertiser\": \"Rovio\",\r\n    \"country\": \"Finland\",\r\n    \"conversion\": \"CPC\",\r\n    \"bid\":\"3.85\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/campaigns/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"campaigns",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit campaigns",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"campaign_name\": \"Angry Birds\",\r\n    \"advertiser\": \"Rovio\",\r\n    \"country\": \"Finland\",\r\n    \"conversion\": \"CPC\",\r\n    \"bid\":\"3.85\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/campaigns/edit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"campaigns",
+						"edit"
+					]
+				},
+				"description": "StartFragment\n\n```\nEditing is done based on the field \"campaign_name\"\n\nYou can edit using one field or all at once.\n```\n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "Find campaigns",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"campaign_name\": \"Angry Birds\",\r\n    \"advertiser\": \"Rovio\",\r\n    \"country\": \"Finland\",\r\n    \"conversion\": \"CPC\",\r\n    \"bid\":\"3.85\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/campaigns/find",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"campaigns",
+						"find"
+					]
+				},
+				"description": "StartFragment\n\n```\nYou can search using one field or all for a more detailed search.\n```\n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch campaigns",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/fetch?country=finland",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"fetch"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "finland"
+						}
+					]
+				},
+				"description": "StartFragment\n\n```\nFilters the best campaign by the highest bid using country as the main parameter\n```\n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete campaigns",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"campaign_name\": \"Angry Birds\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/campaigns/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"campaigns",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
