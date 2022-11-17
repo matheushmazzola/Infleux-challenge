@@ -10,7 +10,7 @@ require('./controllers/fetchController')(app);
 
 
 app.get('/', (request, response)=>{
-    response.sendFile(__dirname + '../public/index.html');
+    response.sendFile(__dirname + '/public/index.html');
 })
 
 app.listen(process.env.PORT || 3000, (error)=>{
