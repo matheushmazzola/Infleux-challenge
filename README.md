@@ -22,7 +22,9 @@ https://nodejs-apii.herokuapp.com/campaigns/create
 https://nodejs-apii.herokuapp.com/campaigns/edit?campaign_name=Angry%20Birds
 
 Description
+
 Editing is done based on the param "campaign_name".
+
 You can edit using one field or all at once.
 
 + Request (application/json)
