@@ -2,7 +2,7 @@ Nodejs-API
 
 POST
 Create campaigns
-https://nodejs-apii.herokuapp.com/campaigns/create
+"https://nodejs-apii.herokuapp.com/campaigns/create"
 
 
 json
@@ -16,7 +16,7 @@ json
 
 PUT
 Edit campaigns
-https://nodejs-apii.herokuapp.com/campaigns/edit
+"https://nodejs-apii.herokuapp.com/campaigns/edit"
 
 Description
 Editing is done based on the field "campaign_name"
@@ -34,7 +34,7 @@ json
 
 GET
 Find campaigns
-https://nodejs-apii.herokuapp.com/campaigns/find?campaign_name=Angry Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85
+"https://nodejs-apii.herokuapp.com/campaigns/find?campaign_name=Angry Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85"
 
 Description
 You can search using one field or all for a more detailed search.
@@ -44,7 +44,7 @@ campaign_name=Angry Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.
 
 GET
 Fetch campaigns
-https://nodejs-apii.herokuapp.com/fetch?country=finland
+"https://nodejs-apii.herokuapp.com/fetch?country=finland"
 
 Description
 Filters the best campaign by the highest bid using country as the main parameter.
@@ -54,7 +54,7 @@ country=finland
 
 DEL
 Delete campaigns
-https://nodejs-apii.herokuapp.com/campaigns/delete
+"https://nodejs-apii.herokuapp.com/campaigns/delete"
 
 
 json
