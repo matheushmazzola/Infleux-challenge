@@ -15,11 +15,17 @@ router.post('/create', async(request, response)=>{
 });
 
 router.get('/find', async(request, response)=>{
-    var data = request.query;
+    const { campaign_name, advertiser, country, conversion, bid } = request.query;
 
     try{
 
-        const campaign = await Campaigns.find({ $regex: data, $options: 'i' });
+        const campaign = await Campaigns.find({$or:[
+            {campaign_name: campaign_name ? campaign_name : ""},
+            {advertiser: advertiser ? advertiser : ""},
+            {country: country ? country : ""},
+            {conversion: conversion ? conversion : ""},
+            {bid: bid ? bid : "" }]});
+
         return response.send({ campaign });
 
     }catch(error){
