@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost/node'), { useMongoClient: true };
+mongoose.connect('mongodb://nodejs-apii.herokuapp.com/node'), { useMongoClient: true };
 
 mongoose.Promise = global.Promise;
 
