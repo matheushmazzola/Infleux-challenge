@@ -28,7 +28,6 @@ export default function FormDialog(props) {
   };
 
   const handleEditCampaigns = () => {
-    console.log(editValues)
     Axios.put(`http://localhost:3001/campaigns/edit?_id=${editValues.id}`, {
       campaign_name: editValues.campaign_name,
       advertiser: editValues.advertiser,
