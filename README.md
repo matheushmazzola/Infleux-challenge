@@ -33,11 +33,9 @@ https://nodejs-apii.herokuapp.com/campaigns/create
 
 ### Edit campaigns [PUT /campaigns/edit]
 
-https://nodejs-apii.herokuapp.com/campaigns/edit
+https://nodejs-apii.herokuapp.com/campaigns/edit?_id=$id
 
 Description
-
-Editing is done based on the param "campaign_name".
 
 You can edit using one field or all at once.
 
@@ -85,13 +83,10 @@ Filters the best campaign by the highest bid using country as the main parameter
 
 ### Delete campaigns [DELETE /campaigns/delete]
 
-https://nodejs-apii.herokuapp.com/campaigns/delete
+Description
+
+You can delete campaigns by _id.
+
+https://nodejs-apii.herokuapp.com/campaigns/delete?_id=$id
 
 
-+ Request (application/json)
-
-    + Body
-
-            {
-				"campaign_name": "Angry Birds"
-			}
