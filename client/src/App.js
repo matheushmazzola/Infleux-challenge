@@ -96,7 +96,7 @@ export default function App() {
         </button>
       </div>
 
-      {listCampaigns.map((val) => (
+      {typeof listCampaigns !== "undefined" && listCampaigns.map((val) => (
         <Campaigns
           key = {val._id}
           listCampaigns={listCampaigns}
