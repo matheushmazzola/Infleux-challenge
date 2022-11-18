@@ -6,6 +6,29 @@ import Campaigns from "./components/cards/cards";
 export default function App() {
   const [values, setValues] = useState();
   const [listCampaigns, setListCampaigns] = useState([]);
+  const [listFetch, setListFetch] = useState([]);
+
+  const handleFetch = () => {
+    if (typeof values == 'undefined') {
+      var data = "";
+      }else{
+        var data = values.country;
+      }
+      Axios.get(`http://localhost:3001/fetch?country=${data}`, ).then((response) => {
+          if(response.data.campaign){ 
+            setListFetch([...listFetch,
+              {
+                id: response.data.campaign._id,
+                campaign_name: response.data.campaign.campaign_name,
+                advertiser: response.data.campaign.advertiser,
+                country: response.data.campaign.country,
+                conversion: response.data.campaign.conversion,
+                bid: response.data.campaign.bid,
+              },
+            ]);
+          }
+        });
+    };
 
   const handleCreate = () => {
     Axios.post("http://localhost:3001/campaigns/create", {
@@ -16,6 +39,7 @@ export default function App() {
       bid: values.bid,
     }).then(() => {
       Axios.get("http://localhost:3001/campaigns/find", {
+        id: values._id,
         campaign_name: values.campaign_name,
         advertiser: values.advertiser,
         country: values.country,
@@ -24,7 +48,7 @@ export default function App() {
       }).then((response) => {
         setListCampaigns([...listCampaigns,
           {
-            id: response.data.campaign._id,
+            id: values._id,
             campaign_name: values.campaign_name,
             advertiser: values.advertiser,
             country: values.country,
@@ -37,8 +61,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/fetch?country=").then((response) => {
-      console.log(response.data.campaign);
+    Axios.get("http://localhost:3001/campaigns/find").then((response) => {
       setListCampaigns(response.data.campaign);
     });
   }, []);
@@ -52,6 +75,36 @@ export default function App() {
 
   return (
     <div className="create-container">
+      <div className="create-container">
+        <h1 className="create-title">Find the best campaign</h1>
+
+        <input
+          type="text"
+          placeholder="Country"
+          name="country"
+          className="Create-input"
+          onChange={handleaddValues}
+        />
+
+        <button onClick={handleFetch} className="Create-button">
+          Find
+        </button>
+
+        {typeof listFetch !== "undefined" && Object(listFetch).map((val) => (
+        <>
+          <Campaigns
+            key={val._id}
+            id={val.id}
+            campaign_name={val.campaign_name}
+            advertiser={val.advertiser}
+            country={val.country}
+            conversion={val.conversion}
+            bid={val.bid}
+          />
+        </>
+      ))}
+
+      </div>
       <div className="create-container">
         <h1 className="create-title">Create new campaign</h1>
 
@@ -95,19 +148,19 @@ export default function App() {
           Create
         </button>
       </div>
-
-      {typeof listCampaigns !== "undefined" && listCampaigns.map((val) => (
-        <Campaigns
-          key = {val._id}
-          listCampaigns={listCampaigns}
-          setListCampaigns={setListCampaigns}
-          id={val._id}
-          campaign_name={val.campaign_name}
-          advertiser={val.advertiser}
-          country={val.country}
-          conversion={val.conversion}
-          bid={val.bid}
-        />
+      
+      {typeof listCampaigns !== "undefined" && Object(listCampaigns).map((val) => (
+        <>
+          <Campaigns
+            key={val._id}
+            id={val._id}
+            campaign_name={val.campaign_name}
+            advertiser={val.advertiser}
+            country={val.country}
+            conversion={val.conversion}
+            bid={val.bid}
+          />
+        </>
       ))}
     </div>
   );

@@ -13,8 +13,11 @@ body {
 
 .create-container {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  flex: 1;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .create-container {

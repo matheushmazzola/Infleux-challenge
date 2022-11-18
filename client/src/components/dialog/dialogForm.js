@@ -9,14 +9,13 @@ import Axios from "axios";
 
 export default function FormDialog(props) {
   const [editValues, setEditValues] = useState({
-    id: props._id,
+    id: props.id,
     campaign_name: props.campaign_name,
     advertiser: props.advertiser,
     country: props.country,
     conversion: props.conversion,
     bid: props.bid,
   });
-
   const handleChangeValues = (values) => {
     setEditValues((prevValues) => ({
       ...prevValues,
@@ -29,38 +28,21 @@ export default function FormDialog(props) {
   };
 
   const handleEditCampaigns = () => {
-    Axios.put("http://localhost:3001/campaigns/edit", {
-      id: editValues.id,
+    console.log(editValues)
+    Axios.put(`http://localhost:3001/campaigns/edit?_id=${editValues.id}`, {
       campaign_name: editValues.campaign_name,
       advertiser: editValues.advertiser,
       country: editValues.country,
       conversion: editValues.conversion,
       bid: editValues.bid,
     }).then(() => {
-      props.setListCampaigns(
-        props.listCampaigns.map((value) => {
-          return value.id === editValues.id
-            ? {
-                id: editValues.id,
-                campaign_name: editValues.campaign_name,
-                advertiser: editValues.advertiser,
-                country: editValues.country,
-                conversion: editValues.conversion,
-              }
-            : value;
-        })
-      );
     });
     handleClose();
   };
 
   const handleDeleteCampaigns = () => {
-    Axios.delete(`http://localhost:3001/campaigns/delete/${editValues.id}`).then(() => {
-      props.setListCampaigns(
-        props.listCampaigns.filter((value) => {
-          return value.id !== editValues.id;
-        })
-      );
+    console.log(editValues)
+    Axios.delete(`http://localhost:3001/campaigns/delete?_id=${editValues.id}`).then(() => {
     });
     handleClose();
   };
@@ -86,9 +68,9 @@ export default function FormDialog(props) {
           <TextField
             autoFocus
             margin="dense"
-            id="name"
-            label="Nome do jogo"
-            defaultValue={props.title}
+            id="campaign_name"
+            label="campaign name"
+            defaultValue={props.campaign_name}
             type="text"
             onChange={handleChangeValues}
             fullWidth
@@ -96,20 +78,40 @@ export default function FormDialog(props) {
           <TextField
             autoFocus
             margin="dense"
-            id="cost"
-            label="preço"
-            defaultValue={props.cost}
+            id="advertiser"
+            label="Advertiser"
+            defaultValue={props.advertiser}
+            type="text"
+            onChange={handleChangeValues}
+            fullWidth
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="country"
+            label="Country"
+            defaultValue={props.country}
+            type="text"
+            onChange={handleChangeValues}
+            fullWidth
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="conversion"
+            label="Conversion"
+            defaultValue={props.conversion}
+            type="text"
+            onChange={handleChangeValues}
+            fullWidth
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="bid"
+            label="Bid"
+            defaultValue={props.bid}
             type="number"
-            onChange={handleChangeValues}
-            fullWidth
-          />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="category"
-            label="Categoria"
-            defaultValue={props.category}
-            type="text"
             onChange={handleChangeValues}
             fullWidth
           />
@@ -118,7 +120,7 @@ export default function FormDialog(props) {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button color="primary" onClick={() => handleDeleteCampaigns()}>
+          <Button color="primary" onClick={handleDeleteCampaigns}>
             Delete
           </Button>
           <Button color="primary" onClick={() => handleEditCampaigns()}>

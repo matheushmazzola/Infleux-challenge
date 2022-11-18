@@ -3,7 +3,6 @@ import "./card.css";
 import FormDialog from "../dialog/dialogForm";
 
 export default function Campaigns(props) {
-  console.log(props);
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -18,15 +17,14 @@ export default function Campaigns(props) {
         bid={props.bid}
         listCampaigns={props.listCampaigns}
         setListCampaigns={props.setListCampaigns}
-        id={props._id}
+        id={props.id}
       />
       <div className="card-container" onClick={() => setOpen(true)}>
         <h1 className="card-title">{props.campaign_name}</h1>
-        <p className="card-id">{props.advertiser}</p>
-        <p className="card-id">{props.country}</p>
-        <p className="card-id">{props._id}</p>
-        <p className="card-id">{props.conversion}</p>
-        <h3 className="card-cost">${props.bid}</h3>
+        <p className="card">advertiser:{props.advertiser}</p>
+        <p className="card">Country:{props.country}</p>
+        <p className="card">Conversion:{props.conversion}</p>
+        <h3 className="card">Bid ${props.bid}</h3>
       </div>
     </>
   );

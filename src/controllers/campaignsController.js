@@ -44,9 +44,11 @@ router.get('/find', async(request, response)=>{
 
 router.put('/edit', async(request, response)=>{
     const { campaign_name, advertiser, country, conversion, bid } = request.body;
+    const id = request.query;
+    var _id = { _id: id };
 
     try{
-        const campaigns = await Campaigns.updateOne({ campaign_name },{ $set: { advertiser, country, conversion, bid }});
+        const campaigns = await Campaigns.updateOne(_id,{ $set: { campaign_name, advertiser, country, conversion, bid }});
         return response.send({ success: "successfully update campaign" });
 
     }catch(error){
@@ -55,8 +57,8 @@ router.put('/edit', async(request, response)=>{
 });
 
 router.delete('/delete', async(request, response)=>{
-    const { campaign_name } = request.body;
-    var deleted = { campaign_name: campaign_name };
+    const id = request.query;
+    var deleted = { _id: id };
 
     try{
 

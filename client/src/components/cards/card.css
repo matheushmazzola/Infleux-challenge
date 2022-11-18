@@ -25,8 +25,8 @@
   display: inline;
 }
 
-.card-cost {
-  margin-top: 15px;
+.card {
+  margin-top: 5px;
 }
 
 .card-container:hover {

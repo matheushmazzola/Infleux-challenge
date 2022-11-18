@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const path = __dirname + '/src/views/';
+const path = __dirname + '/client/build/';
 const cors = require("cors");
 
 app.use(bodyParser.json());
@@ -14,7 +14,6 @@ app.use(cors());
 app.use(express.static(path));
 
 app.get('/', (request, response)=>{
-    response.sendFile(path + "index.html");
 })
 
 app.listen(process.env.PORT || 3001, (error)=>{
