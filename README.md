@@ -31,7 +31,7 @@ https://nodejs-apii.herokuapp.com/campaigns/create
 			}
 
 
-### Edit campaigns [POST /campaigns/edit]
+### Edit campaigns [PUT /campaigns/edit]
 
 https://nodejs-apii.herokuapp.com/campaigns/edit
 
@@ -83,7 +83,7 @@ Filters the best campaign by the highest bid using country as the main parameter
 		?country=finland
 
 
-### Delete campaigns [POST /campaigns/delete]
+### Delete campaigns [DELETE /campaigns/delete]
 
 https://nodejs-apii.herokuapp.com/campaigns/delete
 
