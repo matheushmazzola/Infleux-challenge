@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0929f1b6-d557-4141-ac74-a1cb4a68d774",
+		"_postman_id": "7de741a5-7e11-4289-be67-3d370627308b",
 		"name": "Nodejs-API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "10139964"
@@ -21,12 +21,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/campaigns/create",
+					"raw": "http://localhost:3001/campaigns/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"campaigns",
 						"create"
@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"advertiser\": \"Rovio\",\r\n    \"country\": \"Finland\",\r\n    \"conversion\": \"CPC\",\r\n    \"bid\":\"3.87\"\r\n}",
+					"raw": "{\r\n    \"campaign_name\": \"Angry Birds\",\r\n    \"advertiser\": \"Rovio\",\r\n    \"country\": \"Finland\",\r\n    \"conversion\": \"CPC\",\r\n    \"bid\":\"3.87\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -50,21 +50,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/campaigns/edit?campaign_name=Angry Birds",
+					"raw": "http://localhost:3001/campaigns/edit",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"campaigns",
 						"edit"
-					],
-					"query": [
-						{
-							"key": "campaign_name",
-							"value": "Angry Birds"
-						}
 					]
 				},
 				"description": "StartFragment\n\n```\nEditing is done based on the field \"campaign_name\"\n\nYou can edit using one field or all at once.\n```\n\nEndFragment"
@@ -77,12 +71,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/campaigns/find?campaign_name=Angry Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85",
+					"raw": "http://localhost:3001/campaigns/find?campaign_name=Angry Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"campaigns",
 						"find"
@@ -120,12 +114,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/fetch?country=finland",
+					"raw": "http://localhost:3001/fetch?country=finland",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"fetch"
 					],
@@ -155,12 +149,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/campaigns/delete",
+					"raw": "http://localhost:3001/campaigns/delete",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
 						"campaigns",
 						"delete"
