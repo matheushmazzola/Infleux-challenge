@@ -14,6 +14,7 @@ app.use(cors());
 app.use(express.static(path));
 
 app.get('/', (request, response)=>{
+    return response.send("https://github.com/matheushmazzola/Infleux-challenge-backend");
 })
 
 app.listen(process.env.PORT || 3001, (error)=>{
