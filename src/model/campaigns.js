@@ -4,7 +4,6 @@ const CampaignsSchema = new mongoose.Schema({
 
     campaign_name: {
         type: String,
-        unique: true,
         require: true,
     },
 
