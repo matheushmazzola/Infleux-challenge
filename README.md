@@ -16,7 +16,7 @@ being advertised (after the ad was displayed and clicked)
 
 ### Create campaigns [POST /campaigns/create]
 
-https://infleux-challenge-api.herokuapp.com/campaigns/create
+https://api-challenge-infleux.onrender.com/campaigns/create
 
 + Request (application/json)
 
@@ -33,7 +33,7 @@ https://infleux-challenge-api.herokuapp.com/campaigns/create
 
 ### Edit campaigns [PUT /campaigns/edit]
 
-https://infleux-challenge-api.herokuapp.com/campaigns/edit?_id=$id
+https://api-challenge-infleux.onrender.com/campaigns/edit?_id=$id
 
 Description
 
@@ -54,7 +54,7 @@ You can edit using one field or all at once.
 
 ### Find campaigns [GET /campaigns/find]
 
-https://infleux-challenge-api.herokuapp.com/campaigns/find?campaign_name=Angry%20Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85
+https://api-challenge-infleux.onrender.com/campaigns/find?campaign_name=Angry%20Birds&advertiser=Rovio&country=Finland&conversion=CPC&bid=3.85
 
 Description
 
@@ -68,7 +68,7 @@ You can search using one field or all for a more detailed search.
 
 ### Fetch campaigns [GET /fetch]
 
-https://infleux-challenge-api.herokuapp.com/fetch?country=finland
+https://api-challenge-infleux.onrender.com/fetch?country=finland
 
 Description
 
@@ -87,6 +87,6 @@ Description
 
 You can delete campaigns by _id.
 
-https://infleux-challenge-api.herokuapp.com/campaigns/delete?_id=$id
+https://api-challenge-infleux.onrender.com/campaigns/delete?_id=$id
 
 
